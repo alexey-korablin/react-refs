@@ -26,13 +26,33 @@
           age: 49,
         };
 
+        handleCopy() {
+          console.log('I spot you have copied this text!');
+        }
+
+        handleClick = (e) => {
+          console.log(e.target);
+          this.setState({
+            name: 'Yoshe',
+            age: Math.ceil(e.clientX / 2),
+          });
+        };
+
+        handleMouseOver(e) {
+          console.log(e.clientX);
+        }
+
         render() {
           return (
             <div className='app-content'>
               <h1>React without Redux</h1>
-              <p>
+              <p onCopy={this.handleCopy}>
                 My name is {this.state.name} and I'm {this.state.age}
               </p>
+              <button onClick={this.handleClick}>Click me!</button>
+              <button onMouseOver={this.handleMouseOver}>
+                Hover me!
+              </button>
             </div>
           );
         }
