@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Boxers from './components/Boxer';
+import AddBoxer from './components/AddBoxer';
 
 class App extends Component {
   state = {
@@ -36,6 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className='test'>
+        <AddBoxer />
         <Boxers boxers={this.state.boxers} />
       </div>
     );
