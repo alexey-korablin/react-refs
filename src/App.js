@@ -34,10 +34,16 @@ class App extends Component {
     ],
   };
 
+  addBoxer = (boxer) => {
+    this.setState({
+      boxers: [...this.state.boxers, boxer],
+    });
+  };
+
   render() {
     return (
       <div className='test'>
-        <AddBoxer />
+        <AddBoxer addBoxer={this.addBoxer} />
         <Boxers boxers={this.state.boxers} />
       </div>
     );

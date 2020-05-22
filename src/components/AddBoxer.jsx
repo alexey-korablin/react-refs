@@ -18,6 +18,7 @@ export default class AddBoxer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.addBoxer(this.state);
     console.log(this.state);
     this.setState({
       fullname: '',
@@ -33,21 +34,47 @@ export default class AddBoxer extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor='fullname'>Name</label>
-        <input type='text' id='fullname' onChange={this.handleChange} />
+        <input
+          type='text'
+          id='fullname'
+          onChange={this.handleChange}
+          value={this.state.fullname}
+        />
         <label htmlFor='fights'>Fights</label>
-        <input type='text' id='fights' onChange={this.handleChange} />
+        <input
+          type='text'
+          id='fights'
+          onChange={this.handleChange}
+          value={this.state.fights}
+        />
         <label htmlFor='wins'>Wins</label>
-        <input type='text' id='wins' onChange={this.handleChange} />
+        <input
+          type='text'
+          id='wins'
+          onChange={this.handleChange}
+          value={this.state.wins}
+        />
         <label htmlFor='knockouts'>Knockouts</label>
         <input
           type='text'
           id='knockouts'
           onChange={this.handleChange}
+          value={this.state.knockouts}
         />
         <label htmlFor='loss'>Loss</label>
-        <input type='text' id='loss' onChange={this.handleChange} />
+        <input
+          type='text'
+          id='loss'
+          onChange={this.handleChange}
+          value={this.state.loss}
+        />
         <label htmlFor='draws'>Draws</label>
-        <input type='text' id='draws' onChange={this.handleChange} />
+        <input
+          type='text'
+          id='draws'
+          onChange={this.handleChange}
+          value={this.state.draws}
+        />
         <button>Add</button>
       </form>
     );
