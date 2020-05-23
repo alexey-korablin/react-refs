@@ -14,6 +14,7 @@ class App extends Component {
         knockouts: 32,
         loss: 8,
         draws: 2,
+        id: 1,
       },
       {
         fullname: 'Lennox Lewis',
@@ -22,6 +23,7 @@ class App extends Component {
         knockouts: 32,
         loss: 2,
         draws: 1,
+        id: 2,
       },
       {
         fullname: 'Miguel Angel Cotto',
@@ -30,6 +32,7 @@ class App extends Component {
         knockouts: 33,
         loss: 6,
         draws: 0,
+        id: 3,
       },
     ],
   };
@@ -40,11 +43,21 @@ class App extends Component {
     });
   };
 
+  deleteBoxer = (id) => {
+    console.log('delete boxer with id ', id);
+    this.setState({
+      boxers: this.state.boxers.filter((boxer) => boxer.id !== id),
+    });
+  };
+
   render() {
     return (
       <div className='test'>
         <AddBoxer addBoxer={this.addBoxer} />
-        <Boxers boxers={this.state.boxers} />
+        <Boxers
+          boxers={this.state.boxers}
+          deleteBoxer={this.deleteBoxer}
+        />
       </div>
     );
   }

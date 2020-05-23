@@ -18,7 +18,8 @@ export default class AddBoxer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addBoxer(this.state);
+    const id = Math.floor(Math.random() * 1000);
+    this.props.addBoxer({ ...this.state, id });
     console.log(this.state);
     this.setState({
       fullname: '',
