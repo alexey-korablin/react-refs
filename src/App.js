@@ -52,7 +52,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='test'>
+      <div className='container'>
         <AddBoxer addBoxer={this.addBoxer} />
         <Boxers
           boxers={this.state.boxers}
