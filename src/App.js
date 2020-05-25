@@ -37,6 +37,15 @@ class App extends Component {
     ],
   };
 
+  componentDidMount() {
+    console.log('App has mounted');
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('prevProps', prevProps);
+    console.log('prevState', prevState);
+  }
+
   addBoxer = (boxer) => {
     this.setState({
       boxers: [...this.state.boxers, boxer],
