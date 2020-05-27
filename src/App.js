@@ -26,7 +26,7 @@ class App extends Component {
   addTodo(text) {
     const id = Math.floor(Math.random() * 100);
     this.setState({
-      todos: [...this.state.todos, { id, constent: text }],
+      todos: [...this.state.todos, { id, content: text }],
     });
   }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Todos(props) {
-  console.log(props);
   return (
     <div className='todos collection'>
       {props.todos.length ? (
