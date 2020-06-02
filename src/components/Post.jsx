@@ -9,7 +9,6 @@ export class Post extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     const id = this.props.match.params.post_id;
     this.setState({ id });
   }
