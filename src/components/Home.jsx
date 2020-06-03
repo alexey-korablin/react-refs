@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export class Home extends Component {
   constructor(props) {
@@ -33,7 +34,9 @@ export class Home extends Component {
           posts.map((post) => (
             <div key={post.id} className='post card'>
               <div className='card-content'>
-                <span className='card-title'>{post.title}</span>
+                <Link to={'/' + post.id}>
+                  <span className='card-title'>{post.title}</span>
+                </Link>
                 <p>{post.body}</p>
               </div>
             </div>
