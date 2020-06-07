@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Pokeball from '../pokeball.png';
 
 export class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: [],
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     posts: [],
+  //   };
+  // }
 
-  componentDidMount() {
-    axios
-      .get('https://jsonplaceholder.typicode.com/posts')
-      .then((response) => {
-        console.log(response);
-        this.setState({ posts: response.data });
-      });
-  }
+  // componentDidMount() {
+  //   axios
+  //     .get('https://jsonplaceholder.typicode.com/posts')
+  //     .then((response) => {
+  //       console.log(response);
+  //       this.setState({ posts: response.data });
+  //     });
+  // }
 
   render() {
-    const posts = this.state.posts.slice(0, 10);
+    console.log('props =>', this.props);
+    const { posts } = this.props;
     return (
       <div className='container home'>
         <h4 className='center'>Home</h4>
@@ -32,7 +34,7 @@ export class Home extends Component {
           eveniet similique distinctio et voluptate animi! Quod
           excepturi sed hic, rerum molestias nam nulla cumque delectus.
         </p>
-        {posts.length ? (
+        {posts?.length ? (
           posts.map((post) => (
             <div key={post.id} className='post card'>
               <img src={Pokeball} alt='A pakeball' />
@@ -53,3 +55,10 @@ export class Home extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  console.log('state =>', state);
+  return { posts: state.posts };
+};
+
+export default connect(mapStateToProps)(Home);
