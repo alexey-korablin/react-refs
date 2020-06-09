@@ -23,7 +23,7 @@ export class Home extends Component {
   // }
 
   render() {
-    console.log('props =>', this.props);
+    // console.log('props =>', this.props);
     const { posts } = this.props;
     return (
       <div className='container home'>
@@ -57,7 +57,7 @@ export class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state =>', state);
+  // console.log('state =>', state);
   return { posts: state.posts };
 };
 
